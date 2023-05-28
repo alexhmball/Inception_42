@@ -47,9 +47,6 @@ services:
     build:
       context: ./requirements/wordpress
       dockerfile: Dockerfile
-    image: wordpress
-    networks:
-      - my_network
     environment:
       - DB_HOST=mariadb:3306
       - DB_NAME=${DB_NAME}
@@ -58,6 +55,9 @@ services:
       - WP_USER=${WP_USER}
       - WP_PASS=${WP_PASS}
       - WP_ADMIN=${WP_ADMIN}
+    image: wordpress
+    networks:
+      - my_network
     depends_on:
       - mariadb
 
