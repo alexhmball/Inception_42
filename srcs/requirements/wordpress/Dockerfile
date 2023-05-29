@@ -6,7 +6,7 @@ WORKDIR /var/www/html
 
 COPY ./conf/wp_install.sh .
 
-RUN apk --no-cache update && apk --no-cache upgrade && \
+RUN apk update && apk upgrade && \
 	apk add --no-cache php php-fpm php-phar php81-mysqli php81-iconv php81-mbstring mariadb-client && \
 	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
 	chmod +x wp-cli.phar && \
@@ -24,5 +24,6 @@ RUN chmod a+x wp_install.sh
 
 # RUN ./wp_install.sh
 
+# ENTRYPOINT [ "wp_install.sh" ]
 ENTRYPOINT ["sh"]
 CMD ["./wp_install.sh"]

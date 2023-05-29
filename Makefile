@@ -1,7 +1,3 @@
-IMAGES = $(shell docker images -q)
-
-CONTAINERS = $(shell docker ps -a -q)
-
 all: up
 
 up:
@@ -10,9 +6,10 @@ up:
 down:
 	docker compose -f ./srcs/docker-compose.yml down
 
-prune:
-	docker image prune -a
-	docker image rm -f $(IMAGES)
+prune: down
+	docker image prune -a -f
+	docker volume prune -f
+	docker system prune -a -f
 
 fclean: down prune
 
