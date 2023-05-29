@@ -66,17 +66,17 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/${LOGIN}/data/db
+      device: /${HOME}/${LOGIN}/data/db
   wp:
     name: wp
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/${LOGIN}/data/wp
+      device: /${HOME}/${LOGIN}/data/wp
 
 networks:
   my_network:
     name: my_network
     driver: bridge
-    external: "false"
+    external: false
