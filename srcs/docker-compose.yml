@@ -16,15 +16,12 @@ services:
       - my_network
     depends_on:
       - wordpress
-      - mariadb
 
   mariadb:
     restart: on-failure
     container_name: mariadb
     volumes:
       - db:/var/lib/mysql/
-    # ports:
-    #   - "3306:3306"
     build:
       context: ./requirements/mariadb
       dockerfile: Dockerfile
@@ -40,21 +37,22 @@ services:
   wordpress:
     restart: on-failure
     container_name: wordpress
-    # ports:
-    #   - "9000:9000"
     volumes:
       - wp:/var/www/html
     build:
       context: ./requirements/wordpress
       dockerfile: Dockerfile
     environment:
-      - DB_HOST=mariadb:3306
+      - DB_HOST=${DB_HOST}
       - DB_NAME=${DB_NAME}
-      - DB_ROOT_PASS=${DB_ROOT_PASS}
+      - DB_PASS=${DB_PASS}
       - DB_USER=${DB_USER}
       - WP_USER=${WP_USER}
       - WP_PASS=${WP_PASS}
       - WP_ADMIN=${WP_ADMIN}
+      - WP_URL=${WP_URL}
+      - WP_E_A=${WP_E_A}
+      - WP_E=${WP_E}
     image: wordpress
     networks:
       - my_network

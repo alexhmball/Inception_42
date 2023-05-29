@@ -7,7 +7,7 @@ COPY ./tools/ssl_cert.sh .
 
 EXPOSE 443
 
-RUN apk update && apk add nginx
+RUN apk update && apk add --no-cache nginx
 RUN mkdir -p /var/www/html
 RUN chmod -R a+rwX /var/www/html && chmod 755 /var/www/html
 RUN mv /var/www/html/default.conf /etc/nginx/http.d/default.conf

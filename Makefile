@@ -3,8 +3,6 @@ IMAGES = $(shell docker images -q)
 CONTAINERS = $(shell docker ps -a -q)
 
 all: up
-	mkdir -p home/aball/data/wp
-	mkdir -p home/aball/data/db
 
 up:
 	docker compose  -f ./srcs/docker-compose.yml up --detach  --build
