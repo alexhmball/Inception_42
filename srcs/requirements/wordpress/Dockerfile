@@ -12,18 +12,9 @@ RUN apk update && apk upgrade && \
 	chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp && \
 	wp core download
-# RUN apk add --no-cache openrc
-# RUN mkdir /run/openrc/ && touch /run/openrc/softlevel
-# RUN rc-update
-# RUN rc-status
 RUN sed -i '/listen = 127.0.0.1:9000/c listen = wordpress:9000' /etc/php81/php-fpm.d/www.conf
-# RUN rc-update add php-fpm81
 RUN chmod -R a+rwX /var/www/html && chmod 755 /var/www/html
 RUN chmod a+x wp_install.sh
 
-
-# RUN ./wp_install.sh
-
-# ENTRYPOINT [ "wp_install.sh" ]
 ENTRYPOINT ["sh"]
 CMD ["./wp_install.sh"]

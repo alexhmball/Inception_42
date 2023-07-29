@@ -2,7 +2,6 @@
 /etc/init.d/mariadb setup
 rc-update
 rc-status
-rc-service mariadb start && rc-update add mariadb default
 /etc/init.d/mariadb restart
 mariadb << EOF
 CREATE DATABASE IF NOT EXISTS $DB_NAME;
