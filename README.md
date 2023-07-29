@@ -1,8 +1,12 @@
 # Inception - Exploring Docker and System Administration
+<p align="center">
+<img width="500" alt="expected configuration" src="https://github.com/alexhmball/Inception_42/assets/26721576/ae623d58-c366-40cd-8fb9-9013fcd65532">
+</p>
+
 
 The Inception project provided an exciting opportunity to delve into the world of system administration and gain hands-on experience with Docker. The main objective was to virtualize multiple Docker images and create a small infrastructure with specific rules, all within a personal virtual machine.
 
-Learning Goals
+## Learning Goals
 Throughout the Inception project, I focused on achieving the following learning goals, with a strong emphasis on Docker and system administration:
 
 1. **Docker Virtualization:** I learned how to use Docker to virtualize multiple images, each representing a dedicated service within the infrastructure. The project was set up using Docker Compose for ease of management.
@@ -27,3 +31,18 @@ The Inception project was a challenging yet rewarding experience in system admin
 Implementing secure practices, such as using environment variables and avoiding publicly stored credentials, enhanced the overall robustness and security of the infrastructure. Additionally, I explored the best practices for writing Dockerfiles and handling container entrypoints, which added to my skills as a system administrator.
 
 Through this project, I learned the significance of documentation reading, research, and the importance of adhering to best practices in a professional environment. Overall, the Inception project was a valuable experience that expanded my knowledge of Docker and system administration.
+
+## References
+
+[1] <https://devopswithdocker.com/>
+
+[2] <https://medium.com/@audretschjames/understanding-docker-as-if-it-were-a-gameboy-96c96392efbf>
+
+[3] <https://stackoverflow.com/questions/49950326/how-to-create-docker-volume-device-host-path>
+
+[4] <https://vsupalov.com/docker-arg-env-variable-guide/#arg-and-env-availability>
+
+[5] <https://www.techtarget.com/whatis/definition/daemon>
+
+[6] <https://docs.docker.com/reference/>
+
